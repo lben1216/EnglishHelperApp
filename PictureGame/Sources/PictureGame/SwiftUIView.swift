@@ -9,8 +9,15 @@ import SwiftUI
 import CommomLibrary
 
 struct SwiftUIView: View {
+    @State var vm = PictureGameModel()
     var body: some View {
-        Text("Hello, World!")
+        GeometryReader { g in
+            ForEach(vm.pictureGroup, id: \.self) { pic in
+                QuestionItem(answer: Answer(picUrl: URL(string: pic.value.picUrl)!,isSeleted: pic.value.isSeleted, isCorrect: pic.isCorrect))
+                
+            }
+        }
+        
     }
 }
 

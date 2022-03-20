@@ -13,6 +13,9 @@ struct QuestionItem: View {
     var isShowSelected : Bool {
         return answer.isSeleted
     }
+    var isShowCorrect : Bool {
+        return answer.isCorrect
+    }
     var body: some View {
         ZStack {
             Color.clear
